@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="./logoE.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+    
+    <title>My Porfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav id="navigation">
+            <h1>Emman.</h1>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="toggle-button">
+                    <i class="fa-solid fa-toggle-off"></i>
+                </button>
+            </div>
+        </nav>
+        <script>
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const toggleButton = document.getElementById('toggle-button');
+            const toggleIcon = toggleButton.querySelector('i');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+
+            toggleButton.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                document.querySelector('nav').classList.toggle('dark-mode');
+                document.querySelectorAll('.nav-links li a').forEach(link => {
+                    link.classList.toggle('dark-mode');
+                });
+                document.querySelector('footer').classList.toggle('dark-mode');
+                document.querySelectorAll('.btn1 button').forEach(button => {
+                    button.classList.toggle('dark-mode');
+                });
+
+                // Toggle the icon
+                if (document.body.classList.contains('dark-mode')) {
+                    toggleIcon.classList.remove('fa-toggle-off');
+                    toggleIcon.classList.add('fa-toggle-on');
+                } else {
+                    toggleIcon.classList.remove('fa-toggle-on');
+                    toggleIcon.classList.add('fa-toggle-off');
+                }
+            });
+        </script>
+
+
+
+        
+    </header>
+
+
+    
+
+    <section class="home" id="home">
+
+      
+        
+            <div class="front">
+                
+                        
+                <h2><span style="color: #00C2FF;">I’m</span> <span>Emman Ilustrisimo</h2>
+               
+                <p>UI Designer</p>
+
+
+
+                        <br>
+                        <br>
+
+                        <!-- Buttons -->
+                <div class="btn1">
+                    <button onclick="location.href='#about'">About Me</button>
+                    
+                </div>
+
+              
+              
+            </div>
+
+        <img src="./2-removebg-preview (2).png" alt="">
+        
+    </section>
+
+
+    <section class="about" id="about">
+        
+            <img src="./me.png" alt="">
+        
+    <div class="container">
+            
+                <h2>About Me</h2>
+                <p>Hello, <br> My name is <span class="color">Emman Ilustrisimo</span>, <br>
+                    I am an <span class="color">UI designer</span>. <br> My objective: Challenge my self in a new <br>environment to learn, develop, improve my skills through different <br>projects and contribute more to the company with my abilities.</p>
+        </div>
+
+       
+   
+    </section>
+
+    <section class="ABOUT">
+        <div class="container2">
+            <div class="skills-background">
+                <div class="skills-row">
+                    <div class="skill-category">
+                        <h2>Education</h2>
+                        
+                        <p>Colegio De Montalban - now</p>
+                    </div>
+                    <div class="skill-category">
+                        <h2>Technical Skills</h2>
+                       
+                        <img src="./figma_logo-removebg-preview.png" alt="">
+                        <img src="./html5-logo-2.png" alt="">
+                        <img src="./logo-css-3-1536.png" alt="">
+                    </div>
+                </div>
+                <div class="skills-row">
+                    <div class="skill-category">
+                        <h2>Soft Skills</h2>
+                        
+                        <ul>
+                            <li>Critical Thinking</li>
+                            <li>Communication</li>
+                            <li>Time Management</li>
+                            <li>Teamwork</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h2>Skill Set</h2>
+                        
+                        <ul>
+                            <li>Web Design</li>
+                            <li>Web App</li>
+                            <li>Prototyping</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skills-row">
+                    <div class="skill-category">
+                        <h2>Interest</h2>
+                        
+                        <p>Designing</p>
+                    </div>
+                    <div class="skill-category">
+                        <h2>Language</h2>
+                      
+                        <p>English</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <section class="contact" id="contact">
+       
+        <p>
+            <a href="https://www.facebook.com/bahalakajan03" target="_blank"><i class="fa-brands fa-facebook"></i></a> 
+            <a href="https://www.instagram.com/imanxnxnxxn/" target="_blank"><i class="fa-brands fa-instagram"></i></a>  
+            <a href="https://myaccount.google.com/?utm_source=OGB&utm_medium=app"><i class="fa-regular fa-envelope"></i></a>
+        </p>
+        <p>&copy; 2024 My Portfolio</p>
+    </section>
+
+    <div class="scroll-arrow" onclick="scrollToHome()">
+        <i class="fa-solid fa-arrow-up"></i>
+
+        <script>
+            function scrollToHome() {
+                const homeSection = document.getElementById('navigation');
+                homeSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        
+            // Scroll ARROW
+            window.addEventListener('scroll', () => {
+                document.body.classList.toggle('scrolled', window.scrollY > 100);
+            });
+        </script>
+        
+    </div>
+
+</body>
+</html>
